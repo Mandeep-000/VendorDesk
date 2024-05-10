@@ -24,6 +24,8 @@ import {
   SET_EDIT_PURCHASE,
   DELETE_PRODUCT_BEGIN,
   DELETE_PRODUCT_ERROR,
+  DELETE_ORDER_BEGIN,
+  DELETE_ORDER_ERROR,
   EDIT_PRODUCT_BEGIN,
   EDIT_PRODUCT_SUCCESS,
   EDIT_PRODUCT_ERROR,
@@ -282,6 +284,18 @@ const reducer = (state, action) => {
     return { ...state, isLoading: true };
   }
   if (action.type === DELETE_PRODUCT_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: 'danger',
+      alertText: action.payload.msg,
+    };
+  }
+  if (action.type === DELETE_ORDER_BEGIN) {
+    return { ...state, isLoading: true };
+  }
+  if (action.type === DELETE_ORDER_ERROR) {
     return {
       ...state,
       isLoading: false,

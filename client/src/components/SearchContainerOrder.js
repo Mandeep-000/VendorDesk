@@ -53,20 +53,20 @@ const SearchContainerOrder = () => {
   const optimizedDebounce = useMemo(() => debounce(), []);
 
   
-  const [minDate, setMinDate] = useState('');
-  const [maxDate, setMaxDate] = useState('');
+  // const [minDate, setMinDate] = useState('');
+  // const [maxDate, setMaxDate] = useState('');
   
-  const allOrders = orders;
-  useEffect(() => {
-    // Find the minimum date
-    const min = moment.min(allOrders.map(order => moment(order.createdAt)));
-    setMinDate(min.format('YYYY-MM-DD'));
+  // const allOrders = orders;
+  // useEffect(() => {
+  //   // Find the minimum date
+  //   const min = moment.min(allOrders.map(order => moment(order.createdAt)));
+  //   setMinDate(min.format('YYYY-MM-DD'));
 
-    // Find the maximum date
-    const max = moment.max(allOrders.map(order => moment(order.createdAt)));
-    setMaxDate(max.format('YYYY-MM-DD'));
+  //   // Find the maximum date
+  //   const max = moment.max(allOrders.map(order => moment(order.createdAt)));
+  //   setMaxDate(max.format('YYYY-MM-DD'));
 
-  }, []);
+  // }, []);
 
   const filteredOptions = quantityOptions.filter(option => option !== 'out of stock');
 
@@ -109,8 +109,8 @@ const SearchContainerOrder = () => {
             valueFrom={searchDateFrom}
             nameTo='searchDateTo'
             valueTo={searchDateTo}
-            min={minDate.toString()}
-            max={maxDate.toString()}
+            // min={minDate.toString()}
+            // max={maxDate.toString()}
             handleChange={handleSearch}
           />
           {/* sort */}

@@ -23,6 +23,15 @@ const Wrapper = styled.tr`
     font-size: 1rem;
   }
 
+  .del-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: var(--red-dark);
+    cursor: pointer;
+  }
+
   .content{
     width: 20%;
   }

@@ -141,6 +141,22 @@ const deleteProduct = async (req, res) => {
   res.status(StatusCodes.OK).json({ msg: "Success! Product removed" });
 };
 
+const deleteOrder = async (req, res) => {
+  const { id: orderId } = req.params;
+
+  const order = await Sales.findOne({ _id: orderId });
+
+  if (!order) {
+    throw new NotFoundError(`No order with id :${orderId}`);
+  }
+
+  checkPermissions(req.user, order.createdBy);
+
+  await order.remove();
+  
+  res.status(StatusCodes.OK).json({ msg: "Success! Order removed" });
+};
+
 
 const showStats = async (req, res) => {
   const queryObject = {
@@ -321,4 +337,4 @@ const getAllOrders = async (req, res) => {
 };
 
 
-export { createProduct, deleteProduct, getAllProducts, updateProduct, showStats, setSalesPurchase, getAllOrders };
+export { createProduct, deleteProduct, getAllProducts, updateProduct, showStats, setSalesPurchase, getAllOrders, deleteOrder };

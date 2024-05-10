@@ -1,7 +1,10 @@
 import moment from 'moment'
 import Wrapper from '../assets/wrappers/SalesProduct'
+import { MdDeleteOutline } from "react-icons/md";
+import { useAppContext } from '../context/appContext'
 
 const SaleProduct = ({
+  _id,
   quantity,
   revisedStock,
   exchangeType,
@@ -9,7 +12,7 @@ const SaleProduct = ({
   createdAt,
   index,
 }) => {
- 
+  const { deleteOrder } = useAppContext()
 
   let date = moment(createdAt)
   date = date.format('MMM Do, YYYY')
@@ -31,6 +34,9 @@ const SaleProduct = ({
                 Purchased
               </button>)}              
             </div>
+        </td>
+        <td>
+          <div className='del-icon' onClick={()=>deleteOrder(_id)}><MdDeleteOutline/></div>
         </td>
     </Wrapper>
   );

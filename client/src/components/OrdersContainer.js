@@ -61,7 +61,7 @@ const OrdersContainer = () => {
 
             return <Order key={order._id} index={index + 1} {...order} />})}
       </table>
-      {numOfPages > 1 && <PageBtnContainer />}
+      {/* {numOfPages > 1 && <PageBtnContainer />} */}
     </Wrapper>
     </>
   );

@@ -10,7 +10,7 @@ const links = [
   { id: 2, text: 'all products', path: 'all-products', icon: <MdQueryStats /> },
   { id: 3, text: 'add product', path: 'add-product', icon: <FaWpforms /> },
   { id: 4, text: 'sales/purchase', path: 'sales-purchase', icon: <BsCart3 /> },
-  { id: 5, text: 'sale history', path: 'order-history', icon: <VscHistory /> },
+  { id: 5, text: 'order history', path: 'order-history', icon: <VscHistory /> },
   { id: 6, text: 'profile', path: 'profile', icon: <ImProfile /> },
 ]
 

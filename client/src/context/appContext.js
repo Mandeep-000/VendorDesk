@@ -28,6 +28,8 @@ import {
   SET_EDIT_PURCHASE,
   DELETE_PRODUCT_BEGIN,
   DELETE_PRODUCT_ERROR,
+  DELETE_ORDER_BEGIN,
+  DELETE_ORDER_ERROR,
   EDIT_PRODUCT_BEGIN,
   EDIT_PRODUCT_SUCCESS,
   EDIT_PRODUCT_ERROR,
@@ -101,10 +103,8 @@ const AppProvider = ({ children }) => {
   const authFetch = axios.create({
     baseURL: '/api/v1',
   });
-  // request
-
+  
   // response
-
   authFetch.interceptors.response.use(
     (response) => {
       return response;
@@ -350,6 +350,21 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  const deleteOrder = async (orderId) => {
+    dispatch({ type: DELETE_ORDER_BEGIN });
+    try {
+      await authFetch.delete(`/products/order/${orderId}`);
+      getOrders();
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: DELETE_ORDER_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    clearAlert();
+  };
+
   const deleteProduct = async (productId) => {
     dispatch({ type: DELETE_PRODUCT_BEGIN });
     try {
@@ -364,8 +379,6 @@ const AppProvider = ({ children }) => {
     }
     clearAlert();
   };
-
-
 
 
 
@@ -435,6 +448,7 @@ const AppProvider = ({ children }) => {
         setEditSales,
         setEditPurchase,
         deleteProduct,
+        deleteOrder,
         editProduct,
         editSales,
 

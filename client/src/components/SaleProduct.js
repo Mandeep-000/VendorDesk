@@ -1,7 +1,8 @@
 import moment from 'moment'
 import { FaRupeeSign, FaWeightHanging } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { MdDeleteOutline } from "react-icons/md";
 import { useAppContext } from '../context/appContext'
+import { Link } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/SalesProduct'
 
 const SaleProduct = ({

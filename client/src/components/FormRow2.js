@@ -13,7 +13,7 @@ const FormRow2 = ({ type, nameFrom, valueFrom, nameTo, valueTo, handleChange, la
         name={nameFrom}
         onChange={handleChange}
         className='form-input'
-        style={{width: "47%", marginRight: "2%"}}
+        style={{width: "46.5%", marginRight: "2%"}}
         disabled={disabled}
       />- 
       <input
@@ -24,7 +24,7 @@ const FormRow2 = ({ type, nameFrom, valueFrom, nameTo, valueTo, handleChange, la
         name={nameTo}
         onChange={handleChange}
         className='form-input'
-        style={{width: "47%", marginLeft: "2%"}}
+        style={{width: "46.5%", marginLeft: "2%"}}
         disabled={disabled}
       />
     </div>
