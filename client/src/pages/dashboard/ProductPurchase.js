@@ -1,13 +1,11 @@
-import { FormRow, FormRowSelect, FormRowSelect2, Alert } from '../../components'
+import { FormRow, FormRowSelect2, Alert } from '../../components'
 import { useAppContext } from '../../context/appContext'
 import Wrapper from '../../assets/wrappers/DashboardFormPage'
-import { useLocation } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const ProductPurchase = () => {
   const {
     isLoading,
-    isEditing,
     exchangeType,
     showAlert,
     displayAlert,
@@ -23,10 +21,7 @@ const ProductPurchase = () => {
 
     handleChange,
     clearValues,
-    clearFilters,
-   
-    createProduct,
-    editProduct,
+    
     editSales,
   } = useAppContext()
 

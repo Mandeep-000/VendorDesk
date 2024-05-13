@@ -20,7 +20,7 @@ const Product = ({
   let w = weight;
   let quantityValue;
 
-  if(quantity==0){
+  if(quantity===0){
     quantityValue = "sharpRed"
   }
   if(quantity>0){

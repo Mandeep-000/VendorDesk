@@ -1,4 +1,4 @@
-import { FormRow, FormRowSelect, FormRowSelect2, Alert } from '../../components'
+import { FormRow, FormRowSelect2, Alert } from '../../components'
 import { useAppContext } from '../../context/appContext'
 import Wrapper from '../../assets/wrappers/DashboardFormPage'
 import { useLocation } from 'react-router-dom';
@@ -21,8 +21,7 @@ const AddProduct = () => {
 
     handleChange,
     clearValues,
-    clearFilters,
-   
+    
     createProduct,
     editProduct,
   } = useAppContext()
@@ -41,6 +40,7 @@ const AddProduct = () => {
     return () => {
       unlisten();
     };
+    // eslint-disable-next-line
   }, [location]);
 
   const handleSubmit = (e) => {

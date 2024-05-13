@@ -1,7 +1,5 @@
 import { ProductsContainer, SearchContainer } from '../../components'
-import { useAppContext } from '../../context/appContext'
-import { useLocation } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const AllProducts = () => {
 

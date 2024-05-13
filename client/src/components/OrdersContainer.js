@@ -2,7 +2,6 @@ import { useAppContext } from '../context/appContext';
 import { useEffect } from 'react';
 import {Loading, Alert, Order} from '../components';
 import Wrapper from '../assets/wrappers/SalesContainer';
-import PageBtnContainer from '../components/PageBtnContainer';
 
 
 const OrdersContainer = () => {
@@ -18,8 +17,6 @@ const OrdersContainer = () => {
     searchExchangeType,
     searchDateFrom,
     searchDateTo,
-
-    numOfPages,
     showAlert,
   } = useAppContext();
 

@@ -1,8 +1,7 @@
 import { FormRow, FormRow2, FormRowSelect } from '.';
 import { useAppContext } from '../context/appContext';
 import Wrapper from '../assets/wrappers/SearchContainer';
-import { useState, useMemo, useEffect } from 'react';
-import moment from 'moment'
+import { useState, useMemo } from 'react';
 
 const SearchContainerOrder = () => {
   const [localSearch, setLocalSearch] = useState('');
@@ -16,7 +15,6 @@ const SearchContainerOrder = () => {
     sortOptions,
     handleChange,
     clearFilters,
-    orders,
     quantityOptions,
   } = useAppContext();
 
@@ -50,7 +48,9 @@ const SearchContainerOrder = () => {
       }, 1000);
     };
   };
-  const optimizedDebounce = useMemo(() => debounce(), []);
+  const optimizedDebounce = useMemo(() => debounce()
+  // eslint-disable-next-line
+  , []);
 
   
   // const [minDate, setMinDate] = useState('');

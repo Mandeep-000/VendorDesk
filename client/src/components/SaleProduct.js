@@ -1,6 +1,4 @@
-import moment from 'moment'
-import { FaRupeeSign, FaWeightHanging } from 'react-icons/fa'
-import { MdDeleteOutline } from "react-icons/md";
+import { FaRupeeSign } from 'react-icons/fa'
 import { useAppContext } from '../context/appContext'
 import { Link } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/SalesProduct'
@@ -18,12 +16,9 @@ const SaleProduct = ({
   const { setEditSales, setEditPurchase } = useAppContext()
 
 
-
-  let n = weight.length;
-  let w = weight;
   let quantityValue;
 
-  if(quantity==0){
+  if(quantity===0){
     quantityValue = "sharpRed"
   }
   if(quantity>0){
@@ -36,8 +31,8 @@ const SaleProduct = ({
     quantityValue = "green"
   }
 
-  let date = moment(createdAt)
-  date = date.format('MMM Do, YYYY')
+  // let date = moment(createdAt)
+  // date = date.format('MMM Do, YYYY')
  
   return (
     <Wrapper>

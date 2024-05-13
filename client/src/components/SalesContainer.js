@@ -8,14 +8,9 @@ import SaleProduct from './SaleProduct';
 
 const SalesContainer = () => {
   const {
-    getJobs,
-    jobs,
-    totalJobs,
     isLoading,
     page,
     search,
-    searchStatus,
-    searchType,
     sort,
 
     totalProducts,

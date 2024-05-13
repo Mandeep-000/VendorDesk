@@ -8,7 +8,6 @@ const SearchContainer = () => {
   const [localSearch, setLocalSearch] = useState('');
   const {
     isLoading,
-    search,
     searchQuantity,
     searchBrand,
     searchPrice,
@@ -16,12 +15,8 @@ const SearchContainer = () => {
     sortOptions,
     handleChange,
     clearFilters,
-    products,
     quantityOptions,
     priceOptions,
-
-    jobTypeOptions,
-    statusOptions,
   } = useAppContext();
 
   const { location } = useLocation();
@@ -34,6 +29,7 @@ const SearchContainer = () => {
 
     // Specify the dependencies for the cleanup function
     return clearValuesOnUnmount;
+    // eslint-disable-next-line
   }, [location]);
 
   const handleSearch = (e) => {
@@ -54,7 +50,8 @@ const SearchContainer = () => {
       }, 1000);
     };
   };
-  const optimizedDebounce = useMemo(() => debounce(), []);
+  const optimizedDebounce = useMemo(() => debounce() // eslint-disable-next-line
+  , []);
 
   
   return (

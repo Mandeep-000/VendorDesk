@@ -8,14 +8,10 @@ import PageBtnContainer from './PageBtnContainer';
 
 const ProductsContainer = () => {
   const {
-    getJobs,
-    jobs,
-    totalJobs,
+    
     isLoading,
     page,
     search,
-    searchStatus,
-    searchType,
     sort,
 
     totalProducts,
